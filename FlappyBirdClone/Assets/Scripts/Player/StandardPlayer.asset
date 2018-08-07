@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd6b732fc3c74f4daf1791919fba75c, type: 3}
   m_Name: StandardPlayer
   m_EditorClassIdentifier: 
-  _jumpStrength: 2
+  _jumpStrength: 5
+  _movementSpeed: 5
+  _minMaxPositionY: {x: -4.5, y: 7}

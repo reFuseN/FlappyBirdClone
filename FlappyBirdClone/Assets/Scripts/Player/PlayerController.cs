@@ -14,11 +14,31 @@ public abstract class PlayerController : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         if (_rigidBody == null)
-            Debug.LogError(string.Format("There is no Rigidbody2D attached to {0}", gameObject.name));
+            Debug.LogError(string.Format("There is no Rigidbody2D attached to {0}", name));
+        if (_playerModel == null)
+            Debug.LogError(string.Format("There is no Player Model assigned to PlayerController of {0}", name));
     }
 
     public virtual void Jump()
     {
         _rigidBody.velocity = (new Vector2(0, _playerModel.JumpStrength));
+    }
+
+    private void Update()
+    {
+        Move();
+
+        if (transform.position.y < _playerModel.MinMaxPositionY.x || transform.position.y > _playerModel.MinMaxPositionY.y)
+            Die();
+    }
+
+    public virtual void Move()
+    {
+        transform.position += new Vector3(_playerModel.MovementSpeed * Time.deltaTime, 0, 0);
+    }
+
+    public virtual void Die()
+    {
+        Debug.Log("PLAYER IS DEAD");
     }
 }
