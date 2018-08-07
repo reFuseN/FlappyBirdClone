@@ -27,9 +27,7 @@ public abstract class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-
-        if (transform.position.y < _playerModel.MinMaxPositionY.x || transform.position.y > _playerModel.MinMaxPositionY.y)
-            Die();
+        DeathCheck();
     }
 
     public virtual void Move()
@@ -37,8 +35,15 @@ public abstract class PlayerController : MonoBehaviour
         transform.position += new Vector3(_playerModel.MovementSpeed * Time.deltaTime, 0, 0);
     }
 
+    public virtual void DeathCheck()
+    {
+        if (transform.position.y < _playerModel.MinMaxPositionY.x || transform.position.y > _playerModel.MinMaxPositionY.y)
+            Die();
+    }
+
     public virtual void Die()
     {
-        Debug.Log("PLAYER IS DEAD");
+        transform.DetachChildren();
+        Destroy(gameObject);
     }
 }

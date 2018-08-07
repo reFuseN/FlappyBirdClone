@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: StandardPlayer
   m_EditorClassIdentifier: 
   _jumpStrength: 5
-  _movementSpeed: 5
+  _movementSpeed: 1
   _minMaxPositionY: {x: -4.5, y: 7}

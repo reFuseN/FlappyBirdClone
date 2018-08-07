@@ -4,7 +4,7 @@ public class PlayerControlsAbstractFactory : MonoBehaviour
 {
     [SerializeField]
     private PlayerController _playerController;
-    private PlayerControlsBase _controls;
+    private PlayerControls _controls;
 
     private void Awake()
     {

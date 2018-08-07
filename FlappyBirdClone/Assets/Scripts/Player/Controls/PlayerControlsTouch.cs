@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerControlsTouch : PlayerControlsBase
+public class PlayerControlsTouch : PlayerControls
 {
     public PlayerControlsTouch(PlayerController playerController) : base(playerController)
     {

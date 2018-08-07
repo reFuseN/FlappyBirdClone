@@ -2,12 +2,12 @@
 using System;
 
 [Serializable]
-public abstract class PlayerControlsBase
+public abstract class PlayerControls
 {
     [SerializeField]
     protected PlayerController _playerController;
 
-    public PlayerControlsBase(PlayerController playerController)
+    public PlayerControls(PlayerController playerController)
     {
         _playerController = playerController;
     }

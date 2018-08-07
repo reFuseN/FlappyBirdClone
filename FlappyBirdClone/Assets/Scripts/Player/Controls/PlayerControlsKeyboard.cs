@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerControlsKeyboard : PlayerControlsBase
+public class PlayerControlsKeyboard : PlayerControls
 {
     public PlayerControlsKeyboard(PlayerController playerController) : base(playerController)
     {
